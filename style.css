@@ -1,72 +1,120 @@
 :root {
-  --bg: #0f172a;
+  --color: cyan;
+  --bg1: #020617;
+  --bg2: #0f172a;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, var(--bg1), var(--bg2));
   color: white;
-  transition: background 0.5s ease;
+  overflow-x: hidden;
 }
 
-/* Layout */
+/* brillo de fondo */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent, black 80%);
+  pointer-events: none;
+}
+
 .dashboard {
-  padding: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-/* Grid tipo PC */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 15px;
-}
-
-/* tamaños */
-.big {
-  grid-column: span 1;
-}
-
-.wide {
-  grid-column: span 3;
-}
-
-.valor {
-  font-size: 60px;
   text-align: center;
+  padding: 20px;
+}
+
+.titulo {
+  color: var(--color);
+  text-shadow: 0 0 20px var(--color);
+}
+
+/* panel principal */
+.panel {
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px var(--color);
+}
+
+/* distancia */
+.distancia {
+  font-size: 60px;
+  color: var(--color);
+  text-shadow: 0 0 15px var(--color);
+}
+
+.estado {
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+/* radar */
+.radar {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--color);
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+  box-shadow: 0 0 20px var(--color);
+}
+
+.linea {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color);
+  top: 50%;
+  transform-origin: left;
+  animation: rotar 2s linear infinite;
+}
+
+.onda {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color);
+  border-radius: 50%;
+  animation: pulso 2s infinite;
+}
+
+.centro {
+  width: 10px;
+  height: 10px;
+  background: var(--color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 /* barra */
 .barra {
-  height: 15px;
-  background: #333;
+  height: 12px;
+  background: #222;
   border-radius: 10px;
 }
 
 #nivel {
   height: 100%;
   width: 0%;
-  background: white;
+  background: var(--color);
+  box-shadow: 0 0 10px var(--color);
   transition: 0.4s;
 }
 
 /* pista */
 .pista {
   height: 80px;
-  background: #222;
+  background: #111;
   border-radius: 10px;
+  margin-top: 15px;
   position: relative;
 }
 
@@ -75,4 +123,15 @@ header {
   left: 0%;
   font-size: 40px;
   transition: 0.3s;
+}
+
+/* animaciones */
+@keyframes rotar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulso {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
 }

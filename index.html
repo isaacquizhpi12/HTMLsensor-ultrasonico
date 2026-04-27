@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>📡 Sistema de Monitoreo</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<div class="dashboard">
+
+  <header>
+    <h1>📡 Sistema de Distancia</h1>
+    <span id="estado">Conectando...</span>
+  </header>
+
+  <div class="grid">
+
+    <!-- DISTANCIA -->
+    <div class="card big">
+      <h2>Distancia</h2>
+      <div id="txt-dist" class="valor">-- cm</div>
+    </div>
+
+    <!-- BARRA -->
+    <div class="card">
+      <h2>Nivel</h2>
+      <div class="barra">
+        <div id="nivel"></div>
+      </div>
+    </div>
+
+    <!-- CARRO -->
+    <div class="card">
+      <h2>Movimiento</h2>
+      <div class="pista">
+        <div id="carro">🚗</div>
+      </div>
+    </div>
+
+    <!-- GRAFICA -->
+    <div class="card wide">
+      <h2>Historial</h2>
+      <canvas id="grafica"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

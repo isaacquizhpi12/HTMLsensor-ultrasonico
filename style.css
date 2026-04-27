@@ -1,0 +1,78 @@
+:root {
+  --bg: #0f172a;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: white;
+  transition: background 0.5s ease;
+}
+
+/* Layout */
+.dashboard {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Grid tipo PC */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* tamaños */
+.big {
+  grid-column: span 1;
+}
+
+.wide {
+  grid-column: span 3;
+}
+
+.valor {
+  font-size: 60px;
+  text-align: center;
+}
+
+/* barra */
+.barra {
+  height: 15px;
+  background: #333;
+  border-radius: 10px;
+}
+
+#nivel {
+  height: 100%;
+  width: 0%;
+  background: white;
+  transition: 0.4s;
+}
+
+/* pista */
+.pista {
+  height: 80px;
+  background: #222;
+  border-radius: 10px;
+  position: relative;
+}
+
+#carro {
+  position: absolute;
+  left: 0%;
+  font-size: 40px;
+  transition: 0.3s;
+}

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>📡 Sistema de Monitoreo</title>
+<title>⚡ Radar Inteligente</title>
 
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -10,48 +10,41 @@
 </head>
 <body>
 
+<div class="overlay"></div>
+
 <div class="dashboard">
 
-  <header>
-    <h1>📡 Sistema de Distancia</h1>
-    <span id="estado">Conectando...</span>
-  </header>
+  <h1 class="titulo">⚡ RADAR INTELIGENTE</h1>
 
-  <div class="grid">
+  <div class="panel">
 
-    <!-- DISTANCIA -->
-    <div class="card big">
-      <h2>Distancia</h2>
-      <div id="txt-dist" class="valor">-- cm</div>
+    <div class="distancia" id="txt-dist">-- cm</div>
+    <div class="estado" id="estado">Conectando...</div>
+
+    <!-- Radar -->
+    <div class="radar">
+      <div class="linea"></div>
+      <div class="onda"></div>
+      <div class="centro"></div>
     </div>
 
-    <!-- BARRA -->
-    <div class="card">
-      <h2>Nivel</h2>
-      <div class="barra">
-        <div id="nivel"></div>
-      </div>
+    <!-- Barra -->
+    <div class="barra">
+      <div id="nivel"></div>
     </div>
 
-    <!-- CARRO -->
-    <div class="card">
-      <h2>Movimiento</h2>
-      <div class="pista">
-        <div id="carro">🚗</div>
-      </div>
+    <!-- Carro -->
+    <div class="pista">
+      <div id="carro">🚗</div>
     </div>
 
-    <!-- GRAFICA -->
-    <div class="card wide">
-      <h2>Historial</h2>
-      <canvas id="grafica"></canvas>
-    </div>
+    <!-- Gráfica -->
+    <canvas id="grafica"></canvas>
 
   </div>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
